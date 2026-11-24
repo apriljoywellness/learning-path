@@ -64,6 +64,7 @@
   li.done .title{color:var(--muted)}
   .sub{font-size:.86rem;color:var(--muted)}
   .go{font-size:.88rem;font-weight:600;text-decoration:none;white-space:nowrap;padding-top:2px}
+  .tag.prog{background:var(--rose-soft);color:var(--rose)}
   .tag{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:99px;background:var(--sage-soft);color:var(--sage);margin-left:6px;vertical-align:2px}
 
   .entry{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--sage);border-radius:14px;padding:20px 22px;margin:0 0 14px;box-shadow:var(--shadow)}
@@ -123,12 +124,12 @@ const COURSES = [
     url:"https://www.skills.google/course_templates/536",
     build:"Write a one-page summary of what generative AI is, in words a parent or teacher would understand.",
     done:"2026-11-23", built:"", problem:"", learned:"", cert:"" },
-  { provider:"Anthropic", title:"Claude 101", length:"about 1 hr",
+  { provider:"Anthropic", title:"Claude 101", length:"about 1 hr", started:"2026-11-23",
     url:"https://anthropic.skilljar.com/claude-101",
     build:"Ask Claude to draft a lesson-planning checklist for your reading block. Save the prompt.",
     done:null, built:"", problem:"", learned:"", cert:"" },
-  { provider:"Anthropic", title:"AI Fluency: Framework & Foundations", length:"about 1 to 2 hrs",
-    url:"https://anthropic.skilljar.com/ai-fluency-framework-foundations",
+  { provider:"Anthropic", title:"Introduction to AI Fluency", length:"about 1 to 2 hrs",
+    url:"https://anthropic.skilljar.com/",
     build:"Rewrite one prompt you use often, applying what the course teaches. Compare the before and after results.",
     done:null, built:"", problem:"", learned:"", cert:"" },
   { provider:"Anthropic", title:"AI Fluency for Educators", length:"about 1 hr",
@@ -174,11 +175,11 @@ document.getElementById("bar").style.width = (done.length / COURSES.length * 100
 
 document.getElementById("next").innerHTML = next ? `
   <div class="next">
-    <p class="eyebrow">Up next</p>
+    <p class="eyebrow">${next.started ? "In progress" : "Up next"}</p>
     <h3>${esc(next.title)}</h3>
     <p class="meta">${esc(next.provider)} · ${esc(next.length)} · free</p>
     <p class="build"><b>Then build:</b> ${esc(next.build)}</p>
-    <a class="btn" href="${esc(next.url)}" target="_blank" rel="noopener">Start the course</a>
+    <a class="btn" href="${esc(next.url)}" target="_blank" rel="noopener">${next.started ? "Keep going" : "Start the course"}</a>
     <a class="alt" href="${esc(CATALOG[next.provider])}" target="_blank" rel="noopener">Link moved? Open the catalog</a>
   </div>` : `<div class="next"><p class="eyebrow">All done</p><h3>Every course on the path is finished.</h3></div>`;
 
@@ -187,7 +188,7 @@ document.getElementById("tracks").innerHTML = TRACKS.map(([key, name, note]) => 
   return `<div class="track"><h3>${esc(name)}</h3><p class="note">${esc(note)}</p><ul class="list">` +
     items.map(c => `<li class="${c.done ? "done" : c === next ? "current" : ""}">
       <span class="dot">${c.done ? "✓" : ""}</span>
-      <div><div class="title">${esc(c.title)}${c.done ? '<span class="tag">Done</span>' : ""}</div>
+      <div><div class="title">${esc(c.title)}${c.done ? '<span class="tag">Done</span>' : c.started ? '<span class="tag prog">In progress</span>' : ""}</div>
       <div class="sub">${c.done ? "Finished " + fmt(c.done) : esc(c.length) + " · Build: " + esc(c.build)}</div></div>
       <a class="go" href="${esc(c.url)}" target="_blank" rel="noopener">${c.done ? "Review" : "Open"} →</a>
     </li>`).join("") + `</ul></div>`;
