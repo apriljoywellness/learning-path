@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Learning Path: April Johnson</title>
+<meta name="description" content="Free AI courses April Johnson is taking, and what she built after each one.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff; --tint:#f6f5f7; --card:#ffffff;
+    --plum:#5b2a54; --rose:#bb5f83; --rose-soft:#f6e6ed; --sage:#5f7a4c; --sage-soft:#e8efe2;
+    --ink:#2c1f2b; --muted:#726c75; --line:#eae7ec;
+    --shadow:0 1px 2px rgba(61,28,58,.04), 0 8px 24px rgba(61,28,58,.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#141416; --tint:#1a1a1d; --card:#1e1e22;
+      --plum:#e3d3e0; --rose:#dd93af; --rose-soft:#3a2733; --sage:#a6ba90; --sage-soft:#26301f;
+      --ink:#ecebf0; --muted:#9a939e; --line:#2b2a31;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.4);
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 "Inter",-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px}
+  a{color:var(--plum)}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;color:var(--plum);line-height:1.15;margin:0;font-weight:600}
+  .eyebrow{font:600 11.5px/1 "Inter",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);margin:0 0 10px}
+  header{padding:56px 0 22px}
+  header h1{font-size:clamp(2rem,5vw,2.7rem);margin-bottom:10px}
+  header p{color:var(--muted);max-width:56ch;margin:0}
+  .progress{display:flex;align-items:center;gap:14px;margin:22px 0 0}
+  .bar{flex:1;height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+  .bar span{display:block;height:100%;background:linear-gradient(90deg,var(--rose),var(--plum));border-radius:99px}
+  .count{font-size:.9rem;color:var(--muted);white-space:nowrap}
+  nav{display:flex;gap:18px;margin:18px 0 0;font-size:.92rem}
+  nav a{text-decoration:none;border-bottom:1px solid var(--line)}
+  section{padding:30px 0}
+  section > h2{font-size:1.45rem;margin-bottom:4px}
+  .note{color:var(--muted);font-size:.92rem;margin:0 0 18px}
+
+  .next{background:var(--rose-soft);border-radius:18px;padding:26px 26px 24px}
+  .next h3{font-size:1.5rem;margin:6px 0 6px}
+  .next .meta{color:var(--muted);font-size:.9rem;margin:0 0 12px}
+  .next .build{margin:0 0 18px;font-size:.95rem}
+  .btn{display:inline-block;background:var(--plum);color:var(--bg);text-decoration:none;font-weight:600;padding:11px 20px;border-radius:999px}
+  .btn:hover{opacity:.9}
+  .alt{font-size:.85rem;margin-left:12px;color:var(--muted)}
+
+  .track{margin:0 0 26px}
+  .track h3{font-size:1.1rem;margin:0 0 10px}
+  .list{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:var(--shadow);overflow:hidden}
+  .list li{display:grid;grid-template-columns:28px 1fr auto;gap:12px;align-items:start;padding:14px 16px;border-top:1px solid var(--line)}
+  .list li:first-child{border-top:0}
+  .dot{width:22px;height:22px;border-radius:50%;border:2px solid var(--line);margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff}
+  li.done .dot{background:var(--sage);border-color:var(--sage)}
+  li.current .dot{border-color:var(--rose);box-shadow:0 0 0 4px var(--rose-soft)}
+  .title{font-weight:600}
+  li.done .title{color:var(--muted)}
+  .sub{font-size:.86rem;color:var(--muted)}
+  .go{font-size:.88rem;font-weight:600;text-decoration:none;white-space:nowrap;padding-top:2px}
+  .tag{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:99px;background:var(--sage-soft);color:var(--sage);margin-left:6px;vertical-align:2px}
+
+  .entry{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--sage);border-radius:14px;padding:20px 22px;margin:0 0 14px;box-shadow:var(--shadow)}
+  .entry h3{font-size:1.15rem;margin:0 0 2px}
+  .entry .when{font-size:.85rem;color:var(--muted);margin:0 0 12px}
+  .entry dl{margin:0;display:grid;grid-template-columns:130px 1fr;gap:6px 14px;font-size:.95rem}
+  .entry dt{font-weight:600;color:var(--rose)}
+  .entry dd{margin:0}
+  .empty{border:1.5px dashed var(--line);border-radius:14px;padding:22px;color:var(--muted);text-align:center}
+  footer{padding:30px 0 50px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);margin-top:20px}
+  @media (max-width:560px){.entry dl{grid-template-columns:1fr}.entry dt{margin-top:6px}.alt{display:block;margin:10px 0 0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Learning path</p>
+    <h1>Free AI courses, and what I built</h1>
+    <p>I'm a dyslexia and special-education teacher learning AI for instructional design. Each course here is free. After each one I build something for real teaching work and log it below.</p>
+    <div class="progress"><div class="bar"><span id="bar"></span></div><div class="count" id="count"></div></div>
+    <nav><a href="#next">Up next</a><a href="#path">All courses</a><a href="#portfolio">Portfolio</a></nav>
+  </header>
+
+  <section id="next"></section>
+
+  <section id="path">
+    <h2>All courses</h2>
+    <p class="note">Work top to bottom. No dates, so you can't fall behind. One course a week is a good pace.</p>
+    <div id="tracks"></div>
+  </section>
+
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <p class="note">One entry for each finished course: the build, the problem it solves, and what I learned.</p>
+    <div id="entries"></div>
+  </section>
+
+  <footer>
+    Started November 2026 · Updated <span id="updated"></span>
+  </footer>
+</div>
+
+<script>
+/* ============================================================
+   THE PLAN. Edit this list only. The page builds itself from it.
+   To mark a course done, set done: "YYYY-MM-DD" and fill in the
+   portfolio fields (built, problem, learned). cert is optional.
+   ============================================================ */
+const UPDATED = "2026-11-23";
+const CATALOG = {
+  Anthropic: "https://anthropic.skilljar.com/",
+  Google: "https://www.skills.google/",
+  "Code.org": "https://code.org/ai/pl/101"
+};
+const COURSES = [
+  { provider:"Google", title:"Introduction to Generative AI", length:"45 min",
+    url:"https://www.skills.google/course_templates/536",
+    build:"Write a one-page summary of what generative AI is, in words a parent or teacher would understand.",
+    done:null, built:"", problem:"", learned:"", cert:"" },
+  { provider:"Anthropic", title:"Claude 101", length:"about 1 hr",
+    url:"https://anthropic.skilljar.com/claude-101",
+    build:"Ask Claude to draft a lesson-planning checklist for your reading block. Save the prompt.",
+    done:null, built:"", problem:"", learned:"", cert:"" },
+  { provider:"Anthropic", title:"AI Fluency: Framework & Foundations", length:"about 1 to 2 hrs",
+    url:"https://anthropic.skilljar.com/ai-fluency-framework-foundations",
+    build:"Rewrite one prompt you use often, applying what the course teaches. Compare the before and after results.",
+    done:null, built:"", problem:"", learned:"", cert:"" },
+  { provider:"Anthropic", title:"AI Fluency for Educators", length:"about 1 hr",
+    url:"https://anthropic.skilljar.com/ai-fluency-for-educators",
+    build:"Make a one-page guide for teachers: how to use AI safely to prep a small-group reading lesson.",
+    done:null, built:"", problem:"", learned:"", cert:"" },
+  { provider:"Code.org", title:"AI 101 for Educators", length:"5 modules, about 1 hr each",
+    url:"https://code.org/ai/pl/101",
+    build:"Draft a short PD session outline (30 min) for your campus on using AI for intervention prep.",
+    done:null, built:"", problem:"", learned:"", cert:"" },
+  { provider:"Google", title:"Introduction to Large Language Models", length:"1 hr",
+    url:"https://www.skills.google/course_templates/539",
+    build:"Explain how an LLM works to a 5th grader, using a hands-on activity or manipulative.",
+    done:null, built:"", problem:"", learned:"", cert:"" },
+  { provider:"Anthropic", title:"Claude Code in Action", length:"about 1 to 2 hrs",
+    url:"https://anthropic.skilljar.com/claude-code-in-action",
+    build:"Use Claude Code to organize one folder from your active projects.",
+    done:null, built:"", problem:"", learned:"", cert:"" },
+  { provider:"Anthropic", title:"Introduction to Agent Skills", length:"about 1 hr",
+    url:"https://anthropic.skilljar.com/introduction-to-agent-skills",
+    build:"Turn one repeated task into a reusable skill, such as your reading-lesson template.",
+    done:null, built:"", problem:"", learned:"", cert:"" },
+  { provider:"Anthropic", title:"Introduction to Model Context Protocol", length:"about 1 to 2 hrs",
+    url:"https://anthropic.skilljar.com/introduction-to-model-context-protocol",
+    build:"Connect one tool to Claude, or write up how a connection would help a teacher.",
+    done:null, built:"", problem:"", learned:"", cert:"" }
+];
+const TRACKS = [
+  ["Anthropic", "Claude (Anthropic Academy)", "Free with an email sign-in. Each one gives a certificate."],
+  ["Google", "Google Skills", "Free courses with a completion badge. Skip anything that asks for payment."],
+  ["Code.org", "Teaching with AI (Code.org)", "Free, self-paced, made for teachers."]
+];
+
+/* ============ page builder: no need to edit below ============ */
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt = d => new Date(d+"T12:00:00").toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"});
+const done = COURSES.filter(c => c.done);
+const next = COURSES.find(c => !c.done);
+
+document.getElementById("updated").textContent = fmt(UPDATED);
+document.getElementById("count").textContent = `${done.length} of ${COURSES.length} done`;
+document.getElementById("bar").style.width = (done.length / COURSES.length * 100) + "%";
+
+document.getElementById("next").innerHTML = next ? `
+  <div class="next">
+    <p class="eyebrow">Up next</p>
+    <h3>${esc(next.title)}</h3>
+    <p class="meta">${esc(next.provider)} · ${esc(next.length)} · free</p>
+    <p class="build"><b>Then build:</b> ${esc(next.build)}</p>
+    <a class="btn" href="${esc(next.url)}" target="_blank" rel="noopener">Start the course</a>
+    <a class="alt" href="${esc(CATALOG[next.provider])}" target="_blank" rel="noopener">Link moved? Open the catalog</a>
+  </div>` : `<div class="next"><p class="eyebrow">All done</p><h3>Every course on the path is finished.</h3></div>`;
+
+document.getElementById("tracks").innerHTML = TRACKS.map(([key, name, note]) => {
+  const items = COURSES.filter(c => c.provider === key);
+  return `<div class="track"><h3>${esc(name)}</h3><p class="note">${esc(note)}</p><ul class="list">` +
+    items.map(c => `<li class="${c.done ? "done" : c === next ? "current" : ""}">
+      <span class="dot">${c.done ? "✓" : ""}</span>
+      <div><div class="title">${esc(c.title)}${c.done ? '<span class="tag">Done</span>' : ""}</div>
+      <div class="sub">${c.done ? "Finished " + fmt(c.done) : esc(c.length) + " · Build: " + esc(c.build)}</div></div>
+      <a class="go" href="${esc(c.url)}" target="_blank" rel="noopener">${c.done ? "Review" : "Open"} →</a>
+    </li>`).join("") + `</ul></div>`;
+}).join("");
+
+document.getElementById("entries").innerHTML = done.length ? done.slice().sort((a,b) => b.done.localeCompare(a.done)).map(c => `
+  <article class="entry">
+    <h3>${esc(c.title)}</h3>
+    <p class="when">${esc(c.provider)} · finished ${fmt(c.done)}${c.cert ? ` · <a href="${esc(c.cert)}" target="_blank" rel="noopener">certificate</a>` : ""}</p>
+    <dl>
+      ${c.built ? `<dt>What I built</dt><dd>${esc(c.built)}</dd>` : ""}
+      ${c.problem ? `<dt>Problem it solves</dt><dd>${esc(c.problem)}</dd>` : ""}
+      ${c.learned ? `<dt>What I learned</dt><dd>${esc(c.learned)}</dd>` : ""}
+    </dl>
+  </article>`).join("") : `<div class="empty">The first entry shows up here when the first course is done.</div>`;
+</script>
+</body>
+</html>
