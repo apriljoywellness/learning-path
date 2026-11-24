@@ -4,7 +4,7 @@ One page that holds April's whole free-AI-course plan and turns into a portfolio
 
 - **Page source:** `index.html` (the plan is the `COURSES` list near the bottom)
 - **Repo:** https://github.com/apriljoywellness/learning-path (create it before the first push, see below)
-- **Live:** Cloudflare Pages, auto-deploys on every push (URL added once it's connected)
+- **Live:** https://learning-path-4gg.pages.dev/ (Cloudflare Pages, auto-deploys on every push to main)
 - Replaces `projects/active/free-ai-learning-plan/learning-plan.html` (the old dated plan)
 
 ## Marking a course done
