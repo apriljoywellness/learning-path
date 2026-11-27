@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Learning Path: April Johnson</title>
-<meta name="description" content="Free AI courses April Johnson is taking, and what she built after each one.">
+<meta name="description" content="Free AI and coding courses April Johnson is taking, and what she built after each one.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,8 +82,8 @@
 <div class="wrap">
   <header>
     <p class="eyebrow">Learning path</p>
-    <h1>Free AI courses, and what I built</h1>
-    <p>I'm a dyslexia and special-education teacher learning AI for instructional design. Each course here is free. After each one I build something for real teaching work and log it below.</p>
+    <h1>Free AI and coding courses, and what I built</h1>
+    <p>I'm a dyslexia and special-education teacher learning AI and coding for instructional design. Nearly every course here is free. After each one I build something for real teaching work and log it below.</p>
     <div class="progress"><div class="bar"><span id="bar"></span></div><div class="count" id="count"></div></div>
     <nav><a href="#next">Up next</a><a href="#path">All courses</a><a href="#portfolio">Portfolio</a></nav>
   </header>
@@ -113,11 +113,14 @@
    To mark a course done, set done: "YYYY-MM-DD" and fill in the
    portfolio fields (built, problem, learned). cert is optional.
    ============================================================ */
-const UPDATED = "2026-11-23";
+const UPDATED = "2026-11-27";
 const CATALOG = {
   Anthropic: "https://anthropic.skilljar.com/",
   Google: "https://www.skills.google/",
-  "Code.org": "https://code.org/ai/pl/101"
+  "Code.org": "https://code.org/ai/pl/101",
+  Odin: "https://www.theodinproject.com/paths",
+  freeCodeCamp: "https://www.freecodecamp.org/learn/",
+  Codemy: "https://codemy.com/"
 };
 const COURSES = [
   { provider:"Google", title:"Introduction to Generative AI", length:"45 min",
@@ -155,12 +158,35 @@ const COURSES = [
   { provider:"Anthropic", title:"Introduction to Model Context Protocol", length:"about 1 to 2 hrs",
     url:"https://anthropic.skilljar.com/introduction-to-model-context-protocol",
     build:"Connect one tool to Claude, or write up how a connection would help a teacher.",
+    done:null, built:"", problem:"", learned:"", cert:"" },
+  { provider:"Odin", title:"Foundations (HTML, CSS, JavaScript, Git)", length:"self-paced, several weeks",
+    url:"https://www.theodinproject.com/paths/foundations/courses/foundations",
+    build:"Hand-code a one-page site for a real offer, push it to GitHub, and put it live without a builder.",
+    done:null, built:"", problem:"", learned:"", cert:"" },
+  { provider:"freeCodeCamp", title:"Responsive Web Design certification", length:"self-paced, many weeks",
+    url:"https://www.freecodecamp.org/learn/",
+    build:"Rebuild one page from a Lovable site by hand, then compare your code with what Lovable wrote.",
+    done:null, built:"", problem:"", learned:"", cert:"" },
+  { provider:"freeCodeCamp", title:"JavaScript certification", length:"self-paced, many weeks",
+    url:"https://www.freecodecamp.org/learn/",
+    build:"Add one working feature to a page you built, such as a quiz score or a checklist that remembers its boxes.",
+    done:null, built:"", problem:"", learned:"", cert:"" },
+  { provider:"Odin", title:"React (Full Stack JavaScript path)", length:"self-paced, several weeks",
+    url:"https://www.theodinproject.com/paths/full-stack-javascript/courses/react",
+    build:"Open one of your Lovable projects, find the file behind one screen, and fix a small bug yourself.",
+    done:null, built:"", problem:"", learned:"", cert:"" },
+  { provider:"Codemy", title:"Javascript and HTML Programming For Everyone", length:"about 3.5 hrs total", cost:"$12 for one month",
+    url:"https://codemy.com/",
+    build:"Optional video review with John Elder. Take both courses in one $12 month, then cancel.",
     done:null, built:"", problem:"", learned:"", cert:"" }
 ];
 const TRACKS = [
   ["Anthropic", "Claude (Anthropic Academy)", "Free with an email sign-in. Each one gives a certificate."],
   ["Google", "Google Skills", "Free courses with a completion badge. Skip anything that asks for payment."],
-  ["Code.org", "Teaching with AI (Code.org)", "Free, self-paced, made for teachers."]
+  ["Code.org", "Teaching with AI (Code.org)", "Free, self-paced, made for teachers."],
+  ["Odin", "Coding: The Odin Project", "Free, project-based, with a real human community on Discord when you're stuck. Start after the Python bootcamp."],
+  ["freeCodeCamp", "Coding: freeCodeCamp", "Free, with certifications you can add to your portfolio."],
+  ["Codemy", "Coding: Codemy (optional, paid)", "Video lessons from John Elder. The $12 monthly plan includes every course. Cancel after a month. Skip the lifetime deal."]
 ];
 
 /* ============ page builder: no need to edit below ============ */
@@ -177,7 +203,7 @@ document.getElementById("next").innerHTML = next ? `
   <div class="next">
     <p class="eyebrow">${next.started ? "In progress" : "Up next"}</p>
     <h3>${esc(next.title)}</h3>
-    <p class="meta">${esc(next.provider)} · ${esc(next.length)} · free</p>
+    <p class="meta">${esc(next.provider)} · ${esc(next.length)} · ${esc(next.cost || "free")}</p>
     <p class="build"><b>Then build:</b> ${esc(next.build)}</p>
     <a class="btn" href="${esc(next.url)}" target="_blank" rel="noopener">${next.started ? "Keep going" : "Start the course"}</a>
     <a class="alt" href="${esc(CATALOG[next.provider])}" target="_blank" rel="noopener">Link moved? Open the catalog</a>
@@ -189,7 +215,7 @@ document.getElementById("tracks").innerHTML = TRACKS.map(([key, name, note]) => 
     items.map(c => `<li class="${c.done ? "done" : c === next ? "current" : ""}">
       <span class="dot">${c.done ? "✓" : ""}</span>
       <div><div class="title">${esc(c.title)}${c.done ? '<span class="tag">Done</span>' : c.started ? '<span class="tag prog">In progress</span>' : ""}</div>
-      <div class="sub">${c.done ? "Finished " + fmt(c.done) : esc(c.length) + " · Build: " + esc(c.build)}</div></div>
+      <div class="sub">${c.done ? "Finished " + fmt(c.done) : esc(c.length) + (c.cost ? " · " + esc(c.cost) : "") + " · Build: " + esc(c.build)}</div></div>
       <a class="go" href="${esc(c.url)}" target="_blank" rel="noopener">${c.done ? "Review" : "Open"} →</a>
     </li>`).join("") + `</ul></div>`;
 }).join("");
