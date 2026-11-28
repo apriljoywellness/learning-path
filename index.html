@@ -120,6 +120,7 @@ const CATALOG = {
   "Code.org": "https://code.org/ai/pl/101",
   Odin: "https://www.theodinproject.com/paths",
   freeCodeCamp: "https://www.freecodecamp.org/learn/",
+  GitHub: "https://skills.github.com/",
   Codemy: "https://codemy.com/"
 };
 const COURSES = [
@@ -159,6 +160,18 @@ const COURSES = [
     url:"https://anthropic.skilljar.com/introduction-to-model-context-protocol",
     build:"Connect one tool to Claude, or write up how a connection would help a teacher.",
     done:null, built:"", problem:"", learned:"", cert:"" },
+  { provider:"GitHub", title:"Introduction to GitHub", length:"under 1 hr",
+    url:"https://github.com/skills/introduction-to-github",
+    build:"Make one change to your learning path on github.com (fix a word), then double-click Publish to put it live.",
+    done:null, built:"", problem:"", learned:"", cert:"" },
+  { provider:"GitHub", title:"Communicate using Markdown", length:"under 1 hr",
+    url:"https://github.com/skills/communicate-using-markdown",
+    build:"Rewrite your learning path README so a stranger could understand the project in one minute.",
+    done:null, built:"", problem:"", learned:"", cert:"" },
+  { provider:"GitHub", title:"GitHub Pages", length:"under 1 hr",
+    url:"https://github.com/skills/github-pages",
+    build:"Put one small page live straight from GitHub, with no Cloudflare step at all.",
+    done:null, built:"", problem:"", learned:"", cert:"" },
   { provider:"Odin", title:"Foundations (HTML, CSS, JavaScript, Git)", length:"self-paced, several weeks",
     url:"https://www.theodinproject.com/paths/foundations/courses/foundations",
     build:"Hand-code a one-page site for a real offer, push it to GitHub, and put it live without a builder.",
@@ -175,18 +188,23 @@ const COURSES = [
     url:"https://www.theodinproject.com/paths/full-stack-javascript/courses/react",
     build:"Open one of your Lovable projects, find the file behind one screen, and fix a small bug yourself.",
     done:null, built:"", problem:"", learned:"", cert:"" },
-  { provider:"Codemy", title:"Javascript and HTML Programming For Everyone", length:"about 3.5 hrs total", cost:"$12 for one month",
-    url:"https://codemy.com/",
-    build:"Optional video review with John Elder. Take both courses in one $12 month, then cancel.",
+  { provider:"Codemy", title:"HTML Programming For Everyone", length:"19 videos, about 1.5 hrs", cost:"owned (lifetime)",
+    url:"https://codemy.com/html-programming-everyone/",
+    build:"Open the page source of one of your live sites and label five tags you now recognize.",
+    done:null, built:"", problem:"", learned:"", cert:"" },
+  { provider:"Codemy", title:"Javascript Programming For Everyone", length:"26 videos, about 2 hrs", cost:"owned (lifetime)",
+    url:"https://codemy.com/javascript-programming-everyone/",
+    build:"Add one small working feature to your learning path page, such as a button or a counter.",
     done:null, built:"", problem:"", learned:"", cert:"" }
 ];
 const TRACKS = [
   ["Anthropic", "Claude (Anthropic Academy)", "Free with an email sign-in. Each one gives a certificate."],
   ["Google", "Google Skills", "Free courses with a completion badge. Skip anything that asks for payment."],
   ["Code.org", "Teaching with AI (Code.org)", "Free, self-paced, made for teachers."],
+  ["GitHub", "GitHub Skills", "Free, hands-on, and done right inside GitHub. A guide checks each step as you go."],
   ["Odin", "Coding: The Odin Project", "Free, project-based, with a real human community on Discord when you're stuck. Start after the Python bootcamp."],
   ["freeCodeCamp", "Coding: freeCodeCamp", "Free, with certifications you can add to your portfolio."],
-  ["Codemy", "Coding: Codemy (optional, paid)", "Video lessons from John Elder. The $12 monthly plan includes every course. Cancel after a month. Skip the lifetime deal."]
+  ["Codemy", "Coding: Codemy (lifetime library, owned)", "Bought November 27, 2026 for $49 (Black Friday). Every course, all future courses, and the ebooks are yours for life. Start with these two, then browse the library."]
 ];
 
 /* ============ page builder: no need to edit below ============ */
